@@ -1,24 +1,23 @@
+# vim: set noet sw=8 ts=8:
+
 root = $(shell pwd)
 
-linuxheaders = asm/termios.h \
-							 limits.h			 \
-							 syscall.h		 \
-							 sysexits.h		 \
-							 syslog.h 		 \
-							 sys/ioctl.h 	 \
-							 sys/socket.h	 \
-							 sys/time.h		 \
-							 wait.h
+linuxheaders = asm/termios.h	\
+		limits.h	\
+		syscall.h	\
+		sysexits.h	\
+		syslog.h	\
+		sys/ioctl.h	\
+		sys/socket.h	\
+		sys/time.h	\
+		wait.h
 
-patches = _h2ph_pre.ph 				\
-					sys/select.ph				\
-					bits/socket.ph			\
-					bits/sigcontext.ph
+patches = _h2ph_pre.ph		\
+	sys/select.ph		\
+	bits/socket.ph		\
+	bits/sigcontext.ph
 
 appenders: $(addprefix appended/,$(patches))
-
-
-#_h2ph_pre.ph append/sys/select.ph append/bits/socket.ph append/bits/sigcontext.ph
 
 bin/%: specs/%.c
 	@mkdir -p $(@D)
