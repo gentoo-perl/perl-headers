@@ -9,7 +9,8 @@ int main(char *argc, char **argv) {
   printf("  require Tie::Hash;\n");
   printf("  @ISA = qw(Tie::StdHash);\n");
   printf("  sub FETCH {\n");
-  printf("    warn qq[No sizeof for '$_[1]'] unless exists $_[0]{$_[1]};\n");
+  printf("    my $context = sprintf qq[in %%s file %%s at line %%s.], caller;\n");
+  printf("    warn qq[No sizeof for C type '$_[1]' $context\\n] unless exists $_[0]{$_[1]};\n");
   printf("    return $_[0]{$_[1]};\n");
   printf("  }\n");
   printf("}\n");
