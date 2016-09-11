@@ -1,7 +1,4 @@
 # vim: set noet sw=8 ts=8:
-
-root = $(shell pwd)
-
 linuxheaders = asm/termios.h	\
 		limits.h	\
 		syscall.h	\
