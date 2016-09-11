@@ -2,7 +2,7 @@
 
 int main(char *argc, char **argv) {
 
-#if DO_HASH_WARNING
+#if SIZEOF_WARNING
 
   printf("{\n");
   printf("  package Gentoo::_SizeofWarn;\n");
