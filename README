@@ -1,0 +1,17 @@
+Layout:
+
+  specs/
+
+Contains sources to C programs, which when compiled, emit Perl code
+describing the size of various types and constructs, formatted as a
+blob of code suitable for adding to the end of a .ph file.
+
+"make" compiles specs/* to bin/*, and then executes bin/*
+generating appends/*
+
+"h2ph" is then invoked to generate "headers/*"
+
+and entries in appends/* are combined with entries in headers/* to produce
+appended/*
+
+Subsequent deployment of such is left to the user.
