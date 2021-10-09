@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-int main(char *argc, char **argv) {
+int main(int argc, char **argv) {
 
 #if SIZEOF_WARNING
 
